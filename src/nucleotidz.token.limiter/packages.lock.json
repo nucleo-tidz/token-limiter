@@ -92,6 +92,12 @@
           "Microsoft.Extensions.Primitives": "10.0.7"
         }
       },
+      "Newtonsoft.Json": {
+        "type": "Direct",
+        "requested": "[13.0.2, )",
+        "resolved": "13.0.2",
+        "contentHash": "R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg=="
+      },
       "StackExchange.Redis": {
         "type": "Direct",
         "requested": "[2.12.14, )",
@@ -302,11 +308,6 @@
         "dependencies": {
           "Microsoft.Extensions.Primitives": "8.0.0"
         }
-      },
-      "Newtonsoft.Json": {
-        "type": "Transitive",
-        "resolved": "9.0.1",
-        "contentHash": "U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw=="
       },
       "Pipelines.Sockets.Unofficial": {
         "type": "Transitive",

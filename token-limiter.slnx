@@ -3,6 +3,7 @@
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.props" />
   </Folder>
+  <Project Path="Example/sample.api/sample.api.csproj" Id="7252498d-e9d0-44ca-9379-7da71362b655" />
   <Project Path="src/Abstraction/nucleotidz.token.limiter.abstraction/nucleotidz.token.limiter.abstraction.csproj" Id="a3e9a609-55f1-4d40-aa5b-557d10fe034d" />
   <Project Path="src/Configuration/nucleotidz.token.limiter.configuration/nucleotidz.token.limiter.configuration.csproj" Id="9b54c186-3ca0-4135-9ba9-0387d46ddf3c" />
   <Project Path="src/nucleotidz.token.limiter/nucleotidz.token.limiter.csproj" Id="260f85ce-22b3-4f2d-b3dc-00931e7afd30" />
