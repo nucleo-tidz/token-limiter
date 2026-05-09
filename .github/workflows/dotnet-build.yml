@@ -22,6 +22,6 @@ jobs:
         dotnet-version: 10.0.x
     - name: build
       run: |
-          dotnet restore ./api.sln
-          dotnet build ./api.sln --configuration Release
+          dotnet restore ./token-limiter.slnx
+          dotnet build ./token-limiter.slnx --configuration Release
  
