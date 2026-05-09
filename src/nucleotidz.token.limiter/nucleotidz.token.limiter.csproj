@@ -4,6 +4,20 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>nucleotidz.token.limiter</RootNamespace>
+    <AssemblyName>nucleotidz.token.limiter</AssemblyName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>nucleotidz.token.limiter</PackageId>
+    <Authors>Ahmar Husain</Authors>
+    <Company>Nucleotidz</Company>
+    <Product>nucleotidz.token.limiter</Product>
+    <Description>Lightweight library to rate limit ai tokens</Description>
+    <PackageProjectUrl>https://github.com/nucleo-tidz/token-limiter</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nucleo-tidz/token-limiter</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>nucleotidz.token.limiter</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" />
