@@ -6,6 +6,7 @@
     using nucleotidz.token.limiter.abstraction;
     using nucleotidz.token.limiter.abstraction.Services;
     using nucleotidz.token.limiter.configuration;
+    using nucleotidz.token.limiter.Filter;
     using nucleotidz.token.limiter.Helpers;
     using nucleotidz.token.limiter.Limiters;
     using nucleotidz.token.limiter.Services;
@@ -14,7 +15,12 @@
 
     public static class DependencyInjection
     {
-        public static IServiceCollection AddLimiter(this IServiceCollection services, IConfiguration configuration, LimiterType limiterType)
+        public static IServiceCollection AddAITokenLimiterFilter(this IServiceCollection services)
+        {
+            return services
+                .AddScoped<AITokenRateLimiter>();
+        }
+        public static IServiceCollection AddAITokenLimiter(this IServiceCollection services, IConfiguration configuration, LimiterType limiterType)
         {
             services.AddRedis(configuration)
                 .AddTransient<Utility>()

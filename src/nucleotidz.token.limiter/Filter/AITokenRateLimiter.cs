@@ -8,7 +8,7 @@
     using nucleotidz.token.limiter.abstraction;
     using nucleotidz.token.limiter.abstraction.Services;
 
-    internal class TokenRateLimiter(ITokenLimiter tokenLimiter, IOnboardService onboardService) : IAsyncActionFilter
+    public class AITokenRateLimiter(ITokenLimiter tokenLimiter, IOnboardService onboardService) : IAsyncActionFilter
     {
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
