@@ -51,4 +51,4 @@ jobs:
 
     - name: Publish
       if: github.event_name == 'release'
-      run: dotnet nuget push **\*.${version}.nupkg -Source $feedurl  -SkipDuplicate -ApiKey ${{ secrets.NUGET_TOKEN }}
+      run: dotnet nuget push **\*.${version}.nupkg -s $feedurl  --SkipDuplicate -ApiKey ${{ secrets.NUGET_TOKEN }}
