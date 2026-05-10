@@ -1,17 +1,13 @@
-﻿using System;
-
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using Moq;
 
-using nucleotidz.token.limiter;
 using nucleotidz.token.limiter.abstraction;
 using nucleotidz.token.limiter.abstraction.Services;
 using nucleotidz.token.limiter.configuration;
 using nucleotidz.token.limiter.Helpers;
 using nucleotidz.token.limiter.Limiters;
-using nucleotidz.token.limiter.Services;
 using nucleotidz.token.limiter.unittest.TestUtility;
 
 using StackExchange.Redis;
@@ -42,7 +38,7 @@ namespace nucleotidz.token.limiter.unittest
         }
 
         [Fact]
-        public void add_ai_token_limiter_fixed_Window_limiter_fail_throws_when_endpoint_not_provided()
+        public void depenedecy_injection_should_throw_when_endpoint_not_provided()
         {
             var inMemorySettings = TestUtil.InMemoryConfiguration;
             inMemorySettings.Remove("Redis:EndPoints");
@@ -63,7 +59,7 @@ namespace nucleotidz.token.limiter.unittest
         [Theory]
         [InlineData(LimiterType.SlidingWindow)]
         [InlineData(LimiterType.TokenBucket)]
-        public void add_ai_token_limiter_fixed_Window_limiter_throws_when_unimplemented_limiters_used(LimiterType limiterType)
+        public void depenedecy_injection_should_throw_when_unimplemented_limiters_used(LimiterType limiterType)
         {
             var inMemorySettings = TestUtil.InMemoryConfiguration;
             IConfiguration configuration = new ConfigurationBuilder()
