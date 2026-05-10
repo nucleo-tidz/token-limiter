@@ -47,10 +47,10 @@ jobs:
       run: dotnet restore $solution
 
     - name: Build
-      run: dotnet build $solution /p:Version=${version} --no-restore
+      run: dotnet build $solution /p:PackageVersion=${version} --no-restore
 
     - name: Test
-      run: dotnet test ./token-limiter.slnx --configuration Release --no-build --verbosity normal
+      run: dotnet test $solution --configuration Release --no-build --verbosity normal
 
     - name: Publish
       if: github.event_name == 'release'
