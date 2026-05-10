@@ -1,4 +1,4 @@
-﻿namespace nucleotidz.token.limiter.configuration
+﻿namespace nucleotidz.token.limiter.configuration.Enums
 {
     using System;
     using System.Collections.Generic;

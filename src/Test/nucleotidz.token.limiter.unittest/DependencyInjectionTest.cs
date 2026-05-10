@@ -6,6 +6,7 @@ using Moq;
 using nucleotidz.token.limiter.abstraction;
 using nucleotidz.token.limiter.abstraction.Services;
 using nucleotidz.token.limiter.configuration;
+using nucleotidz.token.limiter.configuration.Enums;
 using nucleotidz.token.limiter.Helpers;
 using nucleotidz.token.limiter.Limiters;
 using nucleotidz.token.limiter.unittest.TestUtility;
