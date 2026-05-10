@@ -10,12 +10,12 @@
 
     using StackExchange.Redis;
 
-    internal class FixedWindowLimiter
+    internal sealed class FixedWindowLimiter
         : RedisBase, ITokenLimiter
     {
         private readonly Utility utility;
         private readonly IDatabase db;
-        public FixedWindowLimiter(IConnectionMultiplexer _connectionMultiplexer, Utility _utility) : base(_connectionMultiplexer)
+        public  FixedWindowLimiter(IConnectionMultiplexer _connectionMultiplexer, Utility _utility) : base(_connectionMultiplexer)
         {
             utility = _utility;
             db = base.Database;
