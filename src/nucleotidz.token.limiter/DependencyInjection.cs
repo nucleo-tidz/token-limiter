@@ -2,6 +2,7 @@
 {
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Options;
 
     using nucleotidz.token.limiter.abstraction;
     using nucleotidz.token.limiter.abstraction.Services;
@@ -10,7 +11,7 @@
     using nucleotidz.token.limiter.Helpers;
     using nucleotidz.token.limiter.Limiters;
     using nucleotidz.token.limiter.Services;
-
+    using System.ComponentModel.DataAnnotations;
     using StackExchange.Redis;
 
     public static class DependencyInjection
@@ -37,15 +38,23 @@
 
         private static IServiceCollection AddRedis(this IServiceCollection services, IConfiguration configuration)
         {
-            var section = configuration.GetSection(RedisOption.SectionName);
-            var options = ConfigurationBinder.Get<RedisOption>(section) ?? throw new InvalidOperationException($"Missing redis configuration section: {RedisOption.SectionName}");
-            services.AddSingleton<IConnectionMultiplexer>(_ => ConnectionMultiplexer.Connect(new ConfigurationOptions
+            services.AddOptions<RedisOption>()
+                .BindConfiguration(RedisOption.SectionName)
+                .ValidateDataAnnotations()
+                .ValidateOnStart();
+
+            services.AddSingleton<IConnectionMultiplexer>(_ =>
             {
-                EndPoints = { { options.EndPoints, options.Port } },
-                User = options.UserName,
-                Password = options.Password,
-                SyncTimeout = options.SyncTimeout
-            }));
+                var options = _.GetRequiredService<IOptions<RedisOption>>().Value;
+                return ConnectionMultiplexer.Connect(new ConfigurationOptions
+                {
+                    EndPoints = { { options.EndPoints, options.Port } },
+                    User = options.UserName,
+                    Password = options.Password,
+                    SyncTimeout = options.SyncTimeout
+                });
+            });
+
             return services;
         }
         private static IServiceCollection AddFixedWindowLimiter(this IServiceCollection services)

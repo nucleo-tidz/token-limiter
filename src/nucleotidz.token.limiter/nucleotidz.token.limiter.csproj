@@ -28,8 +28,11 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
     <PackageReference Include="Microsoft.Extensions.Options" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+    <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" />
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="StackExchange.Redis" />
+    <InternalsVisibleTo Include="nucleotidz.token.limiter.unittest" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abstraction\nucleotidz.token.limiter.abstraction\nucleotidz.token.limiter.abstraction.csproj" />
