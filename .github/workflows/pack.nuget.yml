@@ -49,6 +49,9 @@ jobs:
     - name: Build
       run: dotnet build $solution /p:Version=${version} --no-restore
 
+    - name: test
+      run: dotnet test $solution --configuration Release --no-build --verbosity normal
+
     - name: Publish
       if: github.event_name == 'release'
       run: dotnet nuget push **\*.${version}.nupkg -s $feedurl  --skip-duplicate  --api-key ${{ secrets.NUGET_TOKEN }}

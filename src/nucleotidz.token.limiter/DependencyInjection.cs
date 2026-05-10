@@ -11,7 +11,7 @@
     using nucleotidz.token.limiter.Helpers;
     using nucleotidz.token.limiter.Limiters;
     using nucleotidz.token.limiter.Services;
-    using System.ComponentModel.DataAnnotations;
+
     using StackExchange.Redis;
 
     public static class DependencyInjection
