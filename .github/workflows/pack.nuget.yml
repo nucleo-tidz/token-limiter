@@ -52,7 +52,7 @@ jobs:
     - name: Test
       run: |
             for file in $(find ./src/Test -name "*.csproj"); do
-              dotnet test "$file" --configuration Release --no-build --verbosity normal
+              dotnet test "$file" --configuration Release  --verbosity normal
             done
 
     - name: Publish
