@@ -49,14 +49,9 @@ jobs:
     - name: Build
       run: dotnet build $solution /p:PackageVersion=${version} --no-restore
 
-    # - name: Test
-    #   run: |
-    #         for file in $(find ./src/Test -name "*.csproj"); do
-    #           dotnet test "$file" --configuration Release  --verbosity normal
-    #         done
     - name: Test
       run: dotnet test $solution --configuration Release --verbosity normal
 
-    # - name: Publish
-    #   if: github.event_name == 'release'
-    #   run: dotnet nuget push **\*.${version}.nupkg -s $feedurl  --skip-duplicate  --api-key ${{ secrets.NUGET_TOKEN }}
+    - name: Publish
+      if: github.event_name == 'release'
+      run: dotnet nuget push **\*.${version}.nupkg -s $feedurl  --skip-duplicate  --api-key ${{ secrets.NUGET_TOKEN }}
